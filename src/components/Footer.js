@@ -2,7 +2,7 @@ function Footer() {
     return (
         <footer className="footer website-border">
             <div className="container">
-                <h1 className="h1">My Footer</h1>
+                <h2 className="h1">My Footer</h2>
             </div>
         </footer>
     )

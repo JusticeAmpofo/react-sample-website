@@ -24,6 +24,10 @@ body {
   font-weight: 700;
 }
 
+.mr1 {
+  margin-right: 4px;
+}
+
 .mb5 {
   margin-bottom: 20px;
 }
@@ -40,9 +44,30 @@ body {
   background: #d4d4d4;
 }
 
+.navigation-block--desktop {
+  display: flex;
+}
+
+.navigation-block__list {
+  display: inline-block;
+}
+
 .navigation-block__link,
 .navigation-block__link:visited {
   color: #1c95a4;
+}
+
+.navigation-block__link::after {
+  color: #000;
+  content: '|';
+  display: inline-block;
+  font-size: 80%;
+  font-weight: 700;
+  padding: 0 3px;
+}
+
+.navigation-block__link--last::after {
+  content: '';
 }
 
 .footer {
