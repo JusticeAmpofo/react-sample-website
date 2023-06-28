@@ -24,6 +24,10 @@ body {
   font-weight: 700;
 }
 
+.mt8 {
+  margin-top: 32px;
+}
+
 .mr1 {
   margin-right: 4px;
 }
@@ -59,6 +63,10 @@ body {
 
 .navigation-block--desktop {
   display: flex;
+}
+
+.navigation-block--mobile {
+  display: none;
 }
 
 .navigation-block__list {
@@ -125,12 +133,28 @@ body {
   transform: translateY(14px);
 }
 
+.hamburger--expand .hamburger__top {
+  transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+
+.hamburger--expand .hamburger__middle {
+  display: none;
+}
+
+.hamburger--expand .hamburger__bottom {
+  transform: rotate(-45deg) translateY(6px) translateX(-6px);
+}
+
 .footer {
   background: #5b5b5b;
   color: #fff;
 }
 
 @media (max-width: 640px) {
+  .mb0-sm {
+    margin-bottom: 0px;
+  }
+
   .hamburger {
     display: block;
   }

@@ -1,11 +1,15 @@
+import { useState } from "react";
+
 function Header() {
+    const [expandNav, setExpandNav] = useState(false);
+
     return (
         <header className="header website" class="header website-border">
             <div className="container">
-                <div className="headline-block mb8">
+                <div className="headline-block mb8 mb0-sm">
                     <h1 className="h1">My Header</h1>
 
-                    <button class="hamburger mobile-only-block">
+                    <button onClick={() => setExpandNav(expandNav => !expandNav)} className={`hamburger mobile-only-block ${expandNav ? 'hamburger--expand' : ''}`}>
                         <span class="hamburger__top"></span>
                         <span class="hamburger__middle"></span>
                         <span class="hamburger__bottom"></span>
@@ -23,7 +27,7 @@ function Header() {
                     </nav>
                 </div>
 
-                <div className="navigation-block navigation-block--mobile mobile-only-block">
+                <div className={`mt8 navigation-block navigation-block--mobile ${expandNav ? 'mobile-only-block' : ''}`}>
                     <p className="mb2">Main nav links:</p>
                     <nav>
                         <ul>
