@@ -1,0 +1,41 @@
+.modal__dimmer {
+    background: rgba(0, 0, 0, 0.8);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+}
+
+/* .modal {
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+} */
+
+.modal__container {
+    background: #fff;
+    margin: 0 auto;
+    max-width: 1000px;
+    padding: 20px;
+    position: relative;
+    width: 80%;
+
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10%;
+}
+
+.modal__btn-close {
+    position: absolute;
+    right: 20px;
+}
+
+/* .modal__close-btn-container {
+    text-align: right;
+} */
