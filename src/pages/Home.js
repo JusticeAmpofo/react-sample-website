@@ -1,18 +1,10 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Modal from "../components/Modal"
+import ModalContentA from "../modalContent/ModalContentA"
 import "../styles/Home.css"
 
 function Home() {
     const [modalAOpen, setModalAOpen] = useState(false)
-
-    useEffect(() => {
-        if (modalAOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'unset';
-        }
-    }, [modalAOpen])
-    
 
     return (
         <>
@@ -29,7 +21,7 @@ function Home() {
                 <p className="mb5">Curabitur a rutrum turpis. Aliquam facilisis luctus ornare. Mauris varius, enim ac vehicula gravida, neque mauris dictum neque, quis tempor quam nisl ultricies libero. Pellentesque nunc mauris, volutpat ut turpis sed, scelerisque eleifend nisi. Phasellus efficitur mattis orci. Duis orci metus, faucibus eget enim et, placerat sollicitudin nibh. Vestibulum ut auctor est, sit amet consectetur nibh. Etiam luctus ultricies tempus. Duis nec aliquet magna. In aliquam vitae mauris ut finibus. Phasellus gravida, nibh sed lacinia molestie, lorem enim viverra massa, nec vehicula massa eros vitae turpis. Nulla neque nunc, convallis ac interdum sit amet, blandit eu erat. In et mauris id diam laoreet pretium et quis urna. Aliquam eu egestas odio. Donec non ultricies est.</p>
                 <p className="mb5">Cras finibus eros metus, eget eleifend metus interdum vitae. Aliquam auctor sapien sit amet est eleifend ullamcorper. Donec viverra ligula nec mi posuere lobortis ac sed orci. Etiam egestas ipsum quis libero ullamcorper, eget consectetur eros eleifend. Vestibulum maximus suscipit neque, faucibus facilisis erat interdum in. Suspendisse lacinia, neque non maximus ornare, sem diam vulputate sapien, quis pellentesque est eros eu magna. Aliquam pulvinar molestie lacus, nec auctor nulla aliquet sed. Duis sed magna pretium, posuere eros quis, tincidunt justo. Fusce laoreet mauris lorem. In hac habitasse platea dictumst. Nulla facilisi.</p>
             </div>
-            {modalAOpen && <Modal closeModal={() => setModalAOpen(false)} />}
+            <Modal isOpen={modalAOpen} closeModal={() => setModalAOpen(false)} content={<ModalContentA />} />
         </>
     )
 }
