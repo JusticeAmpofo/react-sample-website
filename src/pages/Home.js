@@ -1,8 +1,17 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Modal from "../components/Modal"
 
 function Home() {
     const [modalAOpen, setModalAOpen] = useState(false)
+
+    useEffect(() => {
+        if (modalAOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+    }, [modalAOpen])
+    
 
     return (
         <>
