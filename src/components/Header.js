@@ -1,4 +1,5 @@
 import { useState } from "react";
+import navLinks from "../content/navLinks";
 import "../styles/Header.css";
 
 function Header() {
@@ -21,9 +22,11 @@ function Header() {
                     <p className="mr1">Main nav links:</p>
                     <nav>
                         <ul>
-                            <li  className="navigation-block__list mr1"><a className="navigation-block__link" href="https://www.google.com" target="_blank" rel="noreferrer">google.com</a></li>
-                            <li className="navigation-block__list mr1"><a className="navigation-block__link" href="https://www.klick.com" target="_blank" rel="noreferrer">klick.com</a></li>
-                            <li className="navigation-block__list mr1"><a className="navigation-block__link navigation-block__link--last" href="https://unity.com/" target="_blank" rel="noreferrer">unity.com</a></li>
+                            {navLinks.map((navLink, index) => {
+                                return (
+                                    <li key={index} className="navigation-block__list mr1"><a className="navigation-block__link" href={navLink.href} target="_blank" rel="noreferrer">{navLink.name}</a></li>
+                                )
+                            })}
                         </ul>
                     </nav>
                 </div>
@@ -32,9 +35,13 @@ function Header() {
                     <p className="mb2">Main nav links:</p>
                     <nav>
                         <ul>
-                            <li  className="navigation-block__list-mobile mb3"><a className="navigation-block__link navigation-block__link--mobile" href="https://www.google.com" target="_blank" rel="noreferrer">google.com</a></li>
-                            <li className="navigation-block__list-mobile mb3"><a className="navigation-block__link navigation-block__link--mobile" href="https://www.klick.com" target="_blank" rel="noreferrer">klick.com</a></li>
-                            <li className="navigation-block__list-mobile mb3"><a className="navigation-block__link navigation-block__link--mobile" href="https://unity.com/" target="_blank" rel="noreferrer">unity.com</a></li>
+                            {navLinks.map((navLink, index) => {
+                                return (
+                                    <li key={index}  className="navigation-block__list-mobile mb3">
+                                        <a className="navigation-block__link navigation-block__link--mobile" href={navLink.href} target="_blank" rel="noreferrer">{navLink.name}</a>
+                                    </li>
+                                )
+                            })}
                         </ul>
                     </nav>
                 </div>
