@@ -39,7 +39,7 @@
     padding: 0 3px;
 }
 
-.navigation-block__link--last::after {
+.navigation-block__list:last-of-type .navigation-block__link::after {
     content: '';
 }
 
