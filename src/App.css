@@ -17,6 +17,10 @@ body {
 }
 
 /* Utility Classes */
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .container {
   padding: 20px;
 }
