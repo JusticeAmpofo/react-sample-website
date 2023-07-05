@@ -4,6 +4,7 @@
 html {
   box-sizing: border-box;
   font-size: 10px;
+  scroll-behavior: smooth;
 }
 
 *, *:before, *:after {
@@ -61,7 +62,9 @@ body {
 .btn {
   background: #d4d4d4;
   border-radius: 8px;
+  color: #000;
   font-weight: 700;
+  text-decoration: none;
   padding: 10px 20px;
 }
 

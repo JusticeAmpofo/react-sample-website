@@ -12,7 +12,7 @@ function App() {
       <Home />
       <ISI />
       <Footer />
-      <SafetyBar />
+      <SafetyBar hideOffset={40} targetId="isi" />
     </>
   );
 }
