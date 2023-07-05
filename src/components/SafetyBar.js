@@ -6,27 +6,6 @@ function SafetyBar({ hideOffset, targetId }) {
 
     useEffect(() => {
         const scrollHandler = () => {
-            // const scrollPosition = window.scrollY || document.documentElement.scrollTop;
-            // const targetSection = document.getElementById(targetId);
-            // const targetSectionPosition = targetSection ? targetSection.offsetTop : 0;
-            // console.log(scrollPosition, targetSectionPosition);
-            // const shouldHide = scrollPosition >= (targetSectionPosition - hideOffset);
-
-            // setIsVisible(!shouldHide);
-            // const targetSection = document.getElementById(targetId);
-            // if (!targetSection) {
-            //     console.log('not valid');
-            //     return
-            // }
-
-            // const rect = targetSection.getBoundingClientRect();
-            // const isViewable = rect.top >= 0 && rect.bottom <= window.innerHeight;
-            // console.log(targetSection);
-            // console.log(rect.top, rect.bottom, window.innerHeight, isViewable);
-            // setIsVisible(!isViewable)
-
-            // 3
-            // const scrollPosition = window.scrollY || document.documentElement.scrollTop;
             const targetSection = document.getElementById(targetId);
 
             const rect = targetSection.getBoundingClientRect();
@@ -34,8 +13,7 @@ function SafetyBar({ hideOffset, targetId }) {
             const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
 
             const distanceToBottom = viewportHeight - topDistance;
-            console.log(distanceToBottom, hideOffset);
-            // setIsVisible(!(distanceToBottom > hideOffset));
+            
             setIsVisible(distanceToBottom < hideOffset);
         }
 
