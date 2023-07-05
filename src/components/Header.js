@@ -6,15 +6,15 @@ function Header() {
     const [expandNav, setExpandNav] = useState(false);
 
     return (
-        <header className="header website" class="header website-border">
+        <header className="header website-border">
             <div className="container">
                 <div className="headline-block mb8 mb0-sm">
                     <h1 className="h1">My Header</h1>
 
                     <button onClick={() => setExpandNav(expandNav => !expandNav)} className={`hamburger mobile-only-block ${expandNav ? 'hamburger--expand' : ''}`}>
-                        <span class="hamburger__top"></span>
-                        <span class="hamburger__middle"></span>
-                        <span class="hamburger__bottom"></span>
+                        <span className="hamburger__top"></span>
+                        <span className="hamburger__middle"></span>
+                        <span className="hamburger__bottom"></span>
                     </button>
                 </div>
 
