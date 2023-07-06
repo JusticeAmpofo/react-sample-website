@@ -24,7 +24,7 @@ function SafetyBar({ hideOffset, targetId }) {
     if (!isVisible) return null
 
     return (
-        <div className="safety-bar container">
+        <div className="safety-bar container website-border">
             <div className="safety-bar__content">
                 <a href='#isi' className='btn safety__btn-isi'>+</a>
                 <h2 className="h1 mb5">IMPORTANT SAFETY INFORMATION</h2>

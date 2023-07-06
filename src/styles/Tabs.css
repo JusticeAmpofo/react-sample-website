@@ -1,0 +1,16 @@
+.tabs__panels {
+    margin-bottom: -10px;
+}
+
+.tabs__item {
+    background: #fff;
+}
+
+.tabs__item--active {
+    background: #d4d4d4;
+}
+
+.tabs__content {
+    background: #fff;
+    padding: 20px;
+}
