@@ -1,6 +1,6 @@
 import { useState } from "react"
 import Modal from "../components/Modal"
-import ModalContentA from "../modalContent/ModalContentA"
+import ModalContentA from "../content/modalContent/ModalContentA"
 import Tabs from "../components/Tabs"
 import "../styles/Home.css"
 
