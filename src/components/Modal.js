@@ -1,5 +1,5 @@
-import { useEffect } from 'react'
-import '../styles/Modal.css'
+import { useEffect } from 'react';
+import '../styles/Modal.css';
 
 function Modal({ isOpen, closeModal, content }) {
     useEffect(() => {
@@ -8,18 +8,20 @@ function Modal({ isOpen, closeModal, content }) {
         } else {
             document.body.classList.remove('overflow-hidden');
         }
-    }, [isOpen])
+    }, [isOpen]);
 
-    if (!isOpen) return null
+    if (!isOpen) return null;
 
     return (
         <>
-            <div onClick={closeModal} className="modal__dimmer"></div>
-            <div className="modal__container">
-                <button onClick={closeModal} className='btn modal__btn-close'>Close</button>
+            <div onClick={closeModal} className='modal__dimmer'></div>
+            <div className='modal__container'>
+                <button onClick={closeModal} className='btn modal__btn-close'>
+                    Close
+                </button>
                 {content}
             </div>
         </>
-    )
+    );
 }
-export default Modal
+export default Modal;
