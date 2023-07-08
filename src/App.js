@@ -6,15 +6,15 @@ import Home from './pages/Home';
 import './App.css';
 
 function App() {
-  return (
-    <>
-      <Header />
-      <Home />
-      <ISI />
-      <Footer />
-      <SafetyBar hideOffset={40} targetId="isi" />
-    </>
-  );
+    return (
+        <>
+            <Header />
+            <Home />
+            <ISI />
+            <Footer />
+            <SafetyBar hideOffset={40} targetId='isi' />
+        </>
+    );
 }
 
 export default App;

@@ -1,8 +1,8 @@
-import TabContent1 from "./TabContent1";
-import TabContent2 from "./TabContent2";
-import TabContent3 from "./TabContent3";
+import TabContent1 from './TabContent1';
+import TabContent2 from './TabContent2';
+import TabContent3 from './TabContent3';
 
-const tabA = [ 
+const tabA = [
     {
         id: 1,
         label: 'Tab 1',
@@ -18,6 +18,6 @@ const tabA = [
         label: 'Tab 3',
         content: <TabContent3 />,
     },
-]
+];
 
-export default tabA
+export default tabA;
