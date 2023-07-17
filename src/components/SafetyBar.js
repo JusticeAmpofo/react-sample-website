@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import ModalContext from '../context/modal/ModalContext';
 import '../styles/SafetyBar.css';
 
 function SafetyBar({ hideOffset, targetId }) {
@@ -21,12 +22,18 @@ function SafetyBar({ hideOffset, targetId }) {
         window.addEventListener('scroll', scrollHandler);
     }, [hideOffset, targetId]);
 
+    const { closeModal } = useContext(ModalContext);
+
     if (!isVisible) return null;
 
     return (
         <div className='safety-bar container website-border'>
             <div className='safety-bar__content'>
-                <a href='#isi' className='btn safety__btn-isi'>
+                <a
+                    onClick={() => closeModal()}
+                    href='#isi'
+                    className='btn safety__btn-isi'
+                >
                     +
                 </a>
                 <h2 className='h1 mb5'>IMPORTANT SAFETY INFORMATION</h2>
