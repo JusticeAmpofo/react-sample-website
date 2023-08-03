@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import navLinks from '../content/navLinks';
 import '../styles/Header.css';
 
@@ -33,14 +34,23 @@ function Header() {
                                         key={index}
                                         className='navigation-block__list mr1'
                                     >
-                                        <a
-                                            className='navigation-block__link'
-                                            href={navLink.href}
-                                            target='_blank'
-                                            rel='noreferrer'
-                                        >
-                                            {navLink.name}
-                                        </a>
+                                        {navLink.isInternal ? (
+                                            <Link
+                                                to={navLink.href}
+                                                className='navigation-block__link'
+                                            >
+                                                {navLink.name}
+                                            </Link>
+                                        ) : (
+                                            <a
+                                                className='navigation-block__link'
+                                                href={navLink.href}
+                                                target='_blank'
+                                                rel='noreferrer'
+                                            >
+                                                {navLink.name}
+                                            </a>
+                                        )}
                                     </li>
                                 );
                             })}
@@ -62,14 +72,23 @@ function Header() {
                                         key={index}
                                         className='navigation-block__list-mobile mb3'
                                     >
-                                        <a
-                                            className='navigation-block__link navigation-block__link--mobile'
-                                            href={navLink.href}
-                                            target='_blank'
-                                            rel='noreferrer'
-                                        >
-                                            {navLink.name}
-                                        </a>
+                                        {navLink.isInternal ? (
+                                            <Link
+                                                to={navLink.href}
+                                                className='navigation-block__link navigation-block__link--mobile'
+                                            >
+                                                {navLink.name}
+                                            </Link>
+                                        ) : (
+                                            <a
+                                                className='navigation-block__link navigation-block__link--mobile'
+                                                href={navLink.href}
+                                                target='_blank'
+                                                rel='noreferrer'
+                                            >
+                                                {navLink.name}
+                                            </a>
+                                        )}
                                     </li>
                                 );
                             })}
