@@ -1,9 +1,12 @@
 import { useState, useEffect, useContext } from 'react';
+import { useLocation } from 'react-router-dom';
 import ModalContext from '../context/modal/ModalContext';
 import '../styles/SafetyBar.css';
 
 function SafetyBar({ hideOffset, targetId }) {
     const [isVisible, setIsVisible] = useState(true);
+
+    let location = useLocation();
 
     useEffect(() => {
         const scrollHandler = () => {
@@ -19,8 +22,9 @@ function SafetyBar({ hideOffset, targetId }) {
             setIsVisible(distanceToBottom < hideOffset);
         };
 
+        scrollHandler();
         window.addEventListener('scroll', scrollHandler);
-    }, [hideOffset, targetId]);
+    }, [hideOffset, targetId, location.pathname]);
 
     const { closeModal } = useContext(ModalContext);
 
