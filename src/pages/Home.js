@@ -1,12 +1,15 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import Modal from '../components/Modal';
 import ModalContentA from '../content/modalContent/ModalContentA';
 import Tabs from '../components/Tabs';
 import tabA from '../content/tabContent/tabA';
 import '../styles/Home.css';
 
+import ModalContext from '../context/modal/ModalContext';
+
 function Home() {
-    const [modalAOpen, setModalAOpen] = useState(false);
+    const { modalIsOpen, modalContent, openModal, closeModal } =
+        useContext(ModalContext);
 
     return (
         <>
@@ -28,7 +31,7 @@ function Home() {
                 </p>
                 <button
                     onClick={() => {
-                        setModalAOpen(true);
+                        openModal(<ModalContentA />);
                     }}
                     className='btn mb5'
                 >
@@ -160,9 +163,9 @@ function Home() {
                 </p>
             </div>
             <Modal
-                isOpen={modalAOpen}
-                closeModal={() => setModalAOpen(false)}
-                content={<ModalContentA />}
+                isOpen={modalIsOpen}
+                closeModal={() => closeModal()}
+                content={modalContent}
             />
         </>
     );
