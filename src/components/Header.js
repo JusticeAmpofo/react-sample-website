@@ -1,10 +1,16 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import navLinks from '../content/navLinks';
 import '../styles/Header.css';
 
 function Header() {
     const [expandNav, setExpandNav] = useState(false);
+
+    let location = useLocation();
+
+    useEffect(() => {
+        setExpandNav(false);
+    }, [location.pathname]);
 
     return (
         <header className='header website-border'>
