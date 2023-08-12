@@ -8,8 +8,7 @@ import '../styles/Home.css';
 import ModalContext from '../context/modal/ModalContext';
 
 function Home() {
-    const { modalIsOpen, modalContent, openModal, closeModal } =
-        useContext(ModalContext);
+    const { modalIsOpen, modalContent, dispatch } = useContext(ModalContext);
 
     return (
         <>
@@ -31,7 +30,10 @@ function Home() {
                 </p>
                 <button
                     onClick={() => {
-                        openModal(<ModalContentA />);
+                        dispatch({
+                            type: 'OPEN_MODAL',
+                            payload: <ModalContentA />,
+                        });
                     }}
                     className='btn mb5'
                 >
@@ -164,7 +166,9 @@ function Home() {
             </div>
             <Modal
                 isOpen={modalIsOpen}
-                closeModal={() => closeModal()}
+                closeModal={() => {
+                    dispatch({ type: 'CLOSE_MODAL' });
+                }}
                 content={modalContent}
             />
         </>
